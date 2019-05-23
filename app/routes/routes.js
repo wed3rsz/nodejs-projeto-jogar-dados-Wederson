@@ -4,7 +4,8 @@ module.exports = function(application){
 	});
 	application.get('/iniciar', function(req,res){
 		console.log('routes: /iniciar');
-		res.send('Esta funcionalidade não foi implementada ainda.');
+		application.app.controllers.jogo.iniciar(application,req,res);
+		//res.send('Esta funcionalidade não foi implementada ainda.');
 	});
 	application.get('/lancarDados', function(req,res){
 		console.log('routes: /lancarDados');
