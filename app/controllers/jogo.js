@@ -10,7 +10,7 @@ Responsável por:
 
 
 
-var model = require('../models/jogo');
+var model = require('../models/Jogo');
 var jogoModel = undefined;
 
 module.exports.iniciar = function (application, req, res){
