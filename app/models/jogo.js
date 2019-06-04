@@ -20,12 +20,12 @@ Jogo.prototype.lancarUmDado = function(){
 Jogo.prototype.lancarDados = function(){
 	console.log('model: lancarDados');
 	var lancamento = [];
-	for (var i = 0; i < this.lados; i++) {
+	for (var i = 0; i < this.dados; i++) {
 		lancamento[i] = this.lancarUmDado();
 	}
 	return lancamento;
 }
-Jogo.prototype.contarDados = function(Lancamento){
+Jogo.prototype.contarDados = function(lancamento){
 	var contagem = Array(this.lados).fill(0);
 	for (var i = 0; i < lancamento.length; i++) {
 		var numero = lancamento[i];
@@ -56,8 +56,27 @@ Jogo.prototype.analisarLancamento = function(lancamento){
 	return resultado;
 }
 
+Jogo.prototype.novoLancamento = function(){
+	console.log('model: novoLancamento');
+	var lancamento = this.lancarDados();
+	console.log('model: analisarLancamento');
+	var analisarLancamento = this.analisarLancamento(lancamento);
+	this.pontos += analisarLancamento.pontos;
+	this.n += 1;
+	console.log('model: prepara resultado');
+
+	var resultado = {
+		pontosAcumulados : this.pontos,
+		nLancamentos : this.n,
+		lancamento : lancamento,
+		jogoLancamento : analisarLancamento.jogo,
+		pontosLancamento : analisarLancamento.pontos,
+	};
+	return resultado;
+}
 
 
+/*
 
 
 
@@ -70,7 +89,7 @@ resultado = jogo.analisarLancamento(lancamento);
 console.log('dados sorteados: ', lancamento);
 console.log('contagem: ', contagem);
 console.log('analise do lancamento: ', resultado);
-
+*/
 
 
 
