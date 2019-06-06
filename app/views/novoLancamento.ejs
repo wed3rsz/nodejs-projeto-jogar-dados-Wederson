@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet"> 
+<style type="text/css">
+	body{
+		font-family: 'Open Sans Condensed', sans-serif;
+	}
+</style>
 <head>
 	<title>Projeto Jogar Dados</title>
 </head>
 <body>
 
-
+	<div class="container">
 	<main>
-		
-		<h1>Projeto Jogar Dados</h1>
+		<div class="right-align">
+		<div class="card-panel teal lighten-3" style="text-align: center;">
+            <h1 class="card-title">Projeto Jogar Dados</h1>
+        </div>
+    	</div>
 
-		<p>Pontuação acumulada: <%= pontosAcumulados %></p>
+		<p class="flow-text">Pontuação acumulada: <%= pontosAcumulados %></p>
 
-		<p>Numero de lançamentos: <%= nLancamentos %></p>
+		<p class="flow-text">Numero de lançamentos: <%= nLancamentos %></p>
 
-		<p>Lançamento: <%= lancamento %></p>
+		<p class="flow-text">Lançamento: <%= lancamento %></p>
 
-		<p>Jogo lançamento atual: <%= jogoLancamento %></p>
+		<p class="flow-text">Jogo lançamento atual: <%= jogoLancamento %></p>
 
-		<p>Pontuação no lançamento atual: <%= pontosLancamento %></p>
+		<p class="flow-text">Pontuação no lançamento atual: <%= pontosLancamento %></p>
 
-		<button type="button" id="buttonLancarDados">Lancar Dados</button>
-
+		<button type="button" id="buttonLancarDados" class="btn waves-effect waves-light"><i class="material-icons right">send</i>Lancar Dados</button>
+		<button type="button" id="buttonReiniciarJogo" class="btn waves-effect waves-light"><i class="material-icons right">send</i>Reiniciar Jogo</button>
+		<button type="button" id="buttonEncerrarJogo" class="btn waves-effect waves-light"><i class="material-icons right">send</i>Encerrar Jogo</button>
 	</main>
+</div>
 
 </body>
 <script src="js/jquery-3.4.1.min.js"></script>
+
+<!-- materialize -->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- materialize -->
 
 <script type="text/javascript">
 	
 	$(document).ready(function(){
 		$('#buttonLancarDados').click(function(){
 			location.href='lancarDados';
+		});
+
+		$('#buttonReiniciarJogo').click(function(){
+			location.href='reiniciar';
+		});
+
+		$('#buttonEncerrarJogo').click(function(){
+			location.href='encerrar';
 		});
 	});
 </script>
