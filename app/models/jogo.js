@@ -4,6 +4,7 @@ function Jogo(dados = 5, lados = 6){
 	this.lados = lados;
 	this.pontos = 0;
 	this.n = 0;
+	this.startTime =  new Date();
 }
 
 Jogo.prototype.novoJogo = function(){
@@ -56,6 +57,7 @@ Jogo.prototype.analisarLancamento = function(lancamento){
 	return resultado;
 }
 
+
 Jogo.prototype.novoLancamento = function(){
 	console.log('model: novoLancamento');
 	var lancamento = this.lancarDados();
@@ -65,12 +67,22 @@ Jogo.prototype.novoLancamento = function(){
 	this.n += 1;
 	console.log('model: prepara resultado');
 
+	this.endTime = new Date();
+	elapsedTime = (this.endTime - this.startTime) / 1000;
+
+	if (elapsedTime > 60){
+		
+	}
+
 	var resultado = {
 		pontosAcumulados : this.pontos,
 		nLancamentos : this.n,
 		lancamento : lancamento,
 		jogoLancamento : analisarLancamento.jogo,
 		pontosLancamento : analisarLancamento.pontos,
+		startTime : this.startTime,
+		endTime : this.endTime,
+		elapsedTime : elapsedTime,
 	};
 	return resultado;
 }

@@ -1,95 +1,99 @@
 <!DOCTYPE html>
 <html>
-	
-	<head>
-		<title>Projeto Jogar Dados</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	</head>
-	
-	<body>
-		
-		<main>
-			<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
-				
-				<h1>Projeto Jogar Dados</h1>
-				
-				<div class="container">
-					
-					<div class="card-deck my-2">
-						
-						<div class="col-6 p2">
+
+<head>
+	<title>Projeto Jogar Dados</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<main>
+		<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
+
+			<h1>Projeto Jogar Dados</h1>
+
+			<div class="container">
+
+				<div class="card-deck my-2">
+
+					<div class="col-6 p2">
+
+						<div class="card">
+
+							<div class="card-header">Pontos Acumulados</div>
+							<div class="card-body"><%= pontosAcumulados %></div>
+
+						</div>
+
+					</div>
+
+					<div class="col-6 p-2">
+
+						<div class="card">
+
+							<div class="card-header">Número de Lançamentos</div>
+
+							<div class='card-body'><%= nLancamentos %></div>
+
+						</div>
+
+					</div>
+
+
+
+					<div class="col-12 p-2">
+
+						<div class="card">
 							
-							<div class="card">
-								
-								<div class="card-header">Pontos Acumulados</div>
-								<div class="card-body"><%= pontosAcumulados %></div>
+							<div class="card-header">Lancamento</div>
+							
+							<div class="card-body">
+
+								<% for (var i=0; i < lancamento.length; i++) { %>
+								<img src="images/dado<%= lancamento[i]%>.png"
+								class="p-2 col-3 col-sm-2">
+								<% } %>
 
 							</div>
 
 						</div>
-							
-						<div class="col-6 p-2">
-								
-							<div class="card">
-								
-								<div class="card-header">Número de Lançamentos</div>
-								
-								<div class='card-body'><%= nLancamentos %></div>
+					</div>
 
-							</div>
+					<div class="col-6 p-2">
+
+						<div class="card">
 							
+							<div class="card-header">Jogo Lancamento</div>
+
+							<div class="card-body"><%= jogoLancamento %></div>
+
 						</div>
 						
-						
-						
-						<div class="col-12 p-2">
-							
-							<div class="card">
-							
-								<div class="card-header">Lancamento</div>
-							
-								<div class="card-body">
-									
-									<% for (var i=0; i < lancamento.length; i++) { %>
-									<img src="images/dado<%= lancamento[i]%>.png"
-									class="p-2 col-3 col-sm-2">
-									<% } %>
-										
-								</div>
+					</div>
 
-							</div>
-						</div>
+					<div class="col-6 p-2">
 
-						<div class="col-6 p-2">
-							
-							<div class="card">
-							
-								<div class="card-header">Jogo Lancamento</div>
-
-								<div class="card-body"><%= jogoLancamento %></div>
-
-							</div>
-						
-						</div>
-
-						<div class="col-6 p-2">
-							
-							<div class="card">
+						<div class="card">
 							
 							<div class="card-header">Pontos Lançamentos</div>
 
 							<div class="card-body"><%= pontosLancamento %></div>
-						
+
 						</div>
 					</div>
-				
+
 				</div>
 			</div>
+
+			<p> <%= startTime %> </p>
+			<p> <%= endTime %> </p>
+			<p> <%= elapsedTime %> </p>
 			
 			<div class="col-12 mx-auto mt-2 px-4">
 				
 				<button class="btn btn-success" type="button" id="buttonLancarDados">LancarDados</button>
-			
+
 			</div>
 
 			<div class="col-12 mx-auto mt-2 px-4">
@@ -104,23 +108,24 @@
 
 			</div>
 
-		</main>
-	
+		</main>	
 	</body>
 
+
 	<script src="js/jquery-3.4.1.min.js"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#buttonLancarDados').click(function(){
-				location.href='lancarDados'
+				location.href='lancarDados';
 			});
 			$('#buttonReiniciarJogo').click(function(){
-				location.href='reiniciar'
+				location.href='reiniciar';
 			});
 			$('#buttonEncerrarJogo').click(function(){
 				location.href='encerrar';
 			});
-		});
+		})
 	</script>
 
-</html>
+	</html>

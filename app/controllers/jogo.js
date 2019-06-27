@@ -45,10 +45,17 @@ module.exports.reiniciar = function(application,req,res){
 
 }
 
-
 module.exports.encerrar = function(application,req,res){
 	console.log('controller: encerrar');
 	jogoModel = undefined;
 	res.render('home');
 
+}
+
+
+module.exports.timer = function(application,req,res){
+	var novato = 0;
+	var veterano = 0;
+	var experiente = 0;
+	console.log('controller: timer');
 }
