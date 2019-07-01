@@ -86,9 +86,9 @@
 				</div>
 			</div>
 
-			<p> <%= startTime %> </p>
-			<p> <%= endTime %> </p>
-			<p> <%= elapsedTime %> </p>
+			<!---<script type="text/javascript">
+				alert('<%= conquista %>');
+			</script>-->
 			
 			<div class="col-12 mx-auto mt-2 px-4">
 				
@@ -108,24 +108,28 @@
 
 			</div>
 
-		</main>	
-	</body>
+
+			<br>
+			<br>
+			<br>
+			</main>	
+		</body>
 
 
-	<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery-3.4.1.min.js"></script>
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#buttonLancarDados').click(function(){
-				location.href='lancarDados';
-			});
-			$('#buttonReiniciarJogo').click(function(){
-				location.href='reiniciar';
-			});
-			$('#buttonEncerrarJogo').click(function(){
-				location.href='encerrar';
-			});
-		})
-	</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#buttonLancarDados').click(function(){
+					location.href='lancarDados';
+				});
+				$('#buttonReiniciarJogo').click(function(){
+					location.href='reiniciar';
+				});
+				$('#buttonEncerrarJogo').click(function(){
+					location.href='encerrar';
+				});
+			})
+		</script>
 
-	</html>
+		</html>
