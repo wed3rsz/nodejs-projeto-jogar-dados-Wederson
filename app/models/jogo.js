@@ -68,19 +68,18 @@ Jogo.prototype.novoLancamento = function(){
 	console.log('model: prepara resultado');
 
 	this.endTime = new Date();
-	Math.trunc(elapsedTime = ((this.endTime - this.startTime) / 1000));
-	(elapsedTime);
+	elapsedTime = ((this.endTime - this.startTime) / 1000);
 	var conquista;
 
 
-	if (elapsedTime > 5 || elapsedTime < 30){
-		var conquista = 'novato';
+	if (elapsedTime  <= 20){
+		var conquista = 'Novato';
 	}
-	else if (elapsedTime < 60){
-		var conquista = 'experiente';
+	else if (elapsedTime  > 20 && elapsedTime <= 40){
+		var conquista = 'Experiente';
 	}
-	else{
-		var conquista = 'profissional';
+	else if (elapsedTime  > 40){
+		var conquista = 'Profissional';
 	}
 
 	var resultado = {

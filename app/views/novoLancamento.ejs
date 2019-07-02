@@ -4,6 +4,12 @@
 <head>
 	<title>Projeto Jogar Dados</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet"> 
+	<style type="text/css">
+		body{
+			font-family: 'Open Sans Condensed', sans-serif;
+		}
+	</style>
 </head>
 
 <body>
@@ -11,7 +17,7 @@
 	<main>
 		<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
 
-			<h1>Projeto Jogar Dados</h1>
+			<h1 class="text-danger">Projeto Jogar Dados</h1>
 
 			<div class="container">
 
@@ -19,7 +25,7 @@
 
 					<div class="col-6 p2">
 
-						<div class="card">
+						<div class="card border-danger mb-3">
 
 							<div class="card-header">Pontos Acumulados</div>
 							<div class="card-body"><%= pontosAcumulados %></div>
@@ -30,7 +36,7 @@
 
 					<div class="col-6 p-2">
 
-						<div class="card">
+						<div class="card border-danger mb-3">
 
 							<div class="card-header">Número de Lançamentos</div>
 
@@ -44,7 +50,7 @@
 
 					<div class="col-12 p-2">
 
-						<div class="card">
+						<div class="card border-danger mb-3">
 							
 							<div class="card-header">Lancamento</div>
 							
@@ -62,7 +68,7 @@
 
 					<div class="col-6 p-2">
 
-						<div class="card">
+						<div class="card border-danger mb-3">
 							
 							<div class="card-header">Jogo Lancamento</div>
 
@@ -74,7 +80,7 @@
 
 					<div class="col-6 p-2">
 
-						<div class="card">
+						<div class="card border-danger mb-3">
 							
 							<div class="card-header">Pontos Lançamentos</div>
 
@@ -83,53 +89,76 @@
 						</div>
 					</div>
 
+
+					<div class="col-6 p2">
+
+						<div class="card border-danger mb-3">
+
+							<div class="card-header">Tempo de jogo</div>
+							<div class="card-body"><%= elapsedTime %></div>
+
+						</div>
+
+					</div>
+					<div class="col-6 p2">
+
+						<div class="card border-danger mb-3">
+
+							<div class="card-header">Conquista no jogo</div>
+							<div class="card-body"><%= conquista %></div>
+
+						</div>
+
+					</div>
+
 				</div>
 			</div>
 
-			<!---<script type="text/javascript">
+
+			<!---<%= elapsedTime %>
+
+			<script type="text/javascript">
+				if ('<%= conquista %>' != ''){
 				alert('<%= conquista %>');
-			</script>-->
+			}
+			</script> -->
 			
 			<div class="col-12 mx-auto mt-2 px-4">
 				
-				<button class="btn btn-success" type="button" id="buttonLancarDados">LancarDados</button>
+				<button class="btn btn-danger" type="button" id="buttonLancarDados">LancarDados</button>
 
 			</div>
 
 			<div class="col-12 mx-auto mt-2 px-4">
 				
-				<button type="button" id="buttonReiniciarJogo">Reiniciar</button>
-
-			</div>
-
-			<div class="col-12 mx-auto mt-2 px-4">
+				<button class="btn btn-danger" type="button" id="buttonReiniciarJogo">Reiniciar</button>
 				
-				<button type="button" id="buttonEncerrarJogo">Encerrar</button>
+				<button type="button" class="btn btn-danger" id="buttonEncerrarJogo">Encerrar</button>
 
 			</div>
 
-
 			<br>
 			<br>
 			<br>
-			</main>	
-		</body>
+
+		</main>	
+	</body>
 
 
-		<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
 
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('#buttonLancarDados').click(function(){
-					location.href='lancarDados';
-				});
-				$('#buttonReiniciarJogo').click(function(){
-					location.href='reiniciar';
-				});
-				$('#buttonEncerrarJogo').click(function(){
-					location.href='encerrar';
-				});
-			})
-		</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#buttonLancarDados').click(function(){
+				location.href='lancarDados';
+			});
+			$('#buttonReiniciarJogo').click(function(){
+				location.href='reiniciar';
+			});
+			$('#buttonEncerrarJogo').click(function(){
+				location.href='encerrar';
+			});
+		})
+	</script>
 
-		</html>
+	</html>
