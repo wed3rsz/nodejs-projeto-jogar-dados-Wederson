@@ -51,11 +51,3 @@ module.exports.encerrar = function(application,req,res){
 	res.render('home');
 
 }
-
-
-module.exports.timer = function(application,req,res){
-	var novato = 0;
-	var veterano = 0;
-	var experiente = 0;
-	console.log('controller: timer');
-}

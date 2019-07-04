@@ -57,18 +57,8 @@ Jogo.prototype.analisarLancamento = function(lancamento){
 	return resultado;
 }
 
-
-Jogo.prototype.novoLancamento = function(){
-	console.log('model: novoLancamento');
-	var lancamento = this.lancarDados();
-	console.log('model: analisarLancamento');
-	var analisarLancamento = this.analisarLancamento(lancamento);
-	this.pontos += analisarLancamento.pontos;
-	this.n += 1;
-	console.log('model: prepara resultado');
-
-	this.endTime = new Date();
-	elapsedTime = ((this.endTime - this.startTime) / 1000);
+Jogo.prototype.verificaConquista = function(elapsedTime){
+	
 	var conquista;
 
 
@@ -81,6 +71,22 @@ Jogo.prototype.novoLancamento = function(){
 	else if (elapsedTime  > 40){
 		var conquista = 'Profissional';
 	}
+
+	return conquista;
+}
+
+
+Jogo.prototype.novoLancamento = function(){
+	console.log('model: novoLancamento');
+	var lancamento = this.lancarDados();
+	console.log('model: analisarLancamento');
+	var analisarLancamento = this.analisarLancamento(lancamento);
+	this.pontos += analisarLancamento.pontos;
+	this.n += 1;
+	console.log('model: prepara resultado');
+	this.endTime = new Date();
+	elapsedTime = (this.endTime - this.startTime) / 1000;
+	conquista = this.verificaConquista(elapsedTime);
 
 	var resultado = {
 		pontosAcumulados : this.pontos,
@@ -99,10 +105,6 @@ Jogo.prototype.novoLancamento = function(){
 
 
 /*
-
-
-
-
 jogo = new Jogo;
 lancamento = jogo.lancarDados();
 contagem = jogo.contarDados(lancamento);

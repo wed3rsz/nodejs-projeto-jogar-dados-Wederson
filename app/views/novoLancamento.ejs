@@ -95,7 +95,7 @@
 						<div class="card border-danger mb-3">
 
 							<div class="card-header">Tempo de jogo</div>
-							<div class="card-body"><%= elapsedTime %></div>
+							<div class="card-body" id="time"><%= elapsedTime.toFixed() %> Segundos</div>
 
 						</div>
 
@@ -121,44 +121,58 @@
 				if ('<%= conquista %>' != ''){
 				alert('<%= conquista %>');
 			}
-			</script> -->
-			
-			<div class="col-12 mx-auto mt-2 px-4">
-				
-				<button class="btn btn-danger" type="button" id="buttonLancarDados">LancarDados</button>
+		</script> -->
 
-			</div>
+		<div class="col-12 mx-auto mt-2 px-4">
 
-			<div class="col-12 mx-auto mt-2 px-4">
-				
-				<button class="btn btn-danger" type="button" id="buttonReiniciarJogo">Reiniciar</button>
-				
-				<button type="button" class="btn btn-danger" id="buttonEncerrarJogo">Encerrar</button>
+			<button class="btn btn-danger" type="button" id="buttonLancarDados">LancarDados</button>
 
-			</div>
+		</div>
 
-			<br>
-			<br>
-			<br>
+		<div class="col-12 mx-auto mt-2 px-4">
 
-		</main>	
-	</body>
+			<button class="btn btn-danger" type="button" id="buttonReiniciarJogo">Reiniciar</button>
+
+			<button type="button" class="btn btn-danger" id="buttonEncerrarJogo">Encerrar</button>
+
+		</div>
+
+		<br>
+		<br>
+		<br>
+
+	</main>	
+</body>
 
 
-	<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#buttonLancarDados').click(function(){
-				location.href='lancarDados';
-			});
-			$('#buttonReiniciarJogo').click(function(){
-				location.href='reiniciar';
-			});
-			$('#buttonEncerrarJogo').click(function(){
-				location.href='encerrar';
-			});
-		})
-	</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#buttonLancarDados').click(function(){
+			location.href='lancarDados';
+		});
+		$('#buttonReiniciarJogo').click(function(){
+			location.href='reiniciar';
+		});
+		$('#buttonEncerrarJogo').click(function(){
+			location.href='encerrar';
+		});
+	})
 
-	</html>
+		// Set the date we're counting down to
+		var startTime = new Date().getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+		  // Get today's date and time
+		  var now = new Date().getTime();
+		  var dif = now - startTime;
+		  var t = <%= Math.round(elapsedTime) %> + Math.round(dif / 1000);
+		  $('#time').html(t + " Segundos");
+		  console.log(t);
+
+		}, 1000)
+</script>
+
+</html>
