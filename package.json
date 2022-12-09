@@ -21,6 +21,6 @@
     "consign": "^0.1.6",
     "easytimer.js": "^3.2.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.18.2"
   }
 }
